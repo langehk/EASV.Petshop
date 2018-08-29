@@ -9,5 +9,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EASV.PetShop.Core\EASV.PetShop.Entities\EASV.PetShop.Entities.csproj" />
+    <ProjectReference Include="..\EASV.PetShop.Core\EASV.PetShop.Core.csproj" />
   </ItemGroup>
 </Project>

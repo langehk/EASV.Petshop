@@ -1,4 +1,6 @@
 ﻿using System;
+using EASV.PetShop.Core.ApplicationService;
+
 namespace EASV.PetShop.ConsoleApp
 {
     public class Printer
