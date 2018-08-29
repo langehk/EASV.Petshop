@@ -6,10 +6,15 @@
 
   <ItemGroup>
     <Compile Remove="Class1.cs" />
+    <Compile Remove="EASV.PetShop.Entities\Pet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ApplicationService\" />
     <Folder Include="ApplicationService\Implementation\" />
     <Folder Include="DomainService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="EASV.PetShop.Entities\obj\EASV.Core.Entities.csproj.nuget.cache" />
+    <None Remove="EASV.PetShop.Entities\obj\Debug\netstandard2.0\EASV.Core.Entities.assets.cache" />
   </ItemGroup>
 </Project>

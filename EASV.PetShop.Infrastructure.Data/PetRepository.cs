@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using EASV.PetShop.Core.DomainService;
 using EASV.PetShop.Entities;
 
 namespace EASV.PetShop.Infrastructure.Data
 {
     public class PetRepository : IPetRepository
     {
-        public IEnumerable<Pet> ReadPets()
+        public IEnumerable<Pet> ReadCars()
         {
             return FakeDB.Pets;
         }

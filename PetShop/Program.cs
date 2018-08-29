@@ -12,8 +12,7 @@ namespace PetShop
 {
     public class Program
     {
-
-
+        
         static void Main(String[] args)
         {
             FakeDB.InitData();
