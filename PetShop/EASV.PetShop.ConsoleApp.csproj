@@ -8,8 +8,4 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EASV.PetShop.Infrastructure.Data\EASV.PetShop.Infrastructure.Data.csproj" />
-    <ProjectReference Include="..\EASV.PetShop.Core\EASV.PetShop.Core.csproj" />
-  </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using EASV.PetShop.Entities;
 using System.Text;
+
 
 namespace EASV.PetShop.Core.DomainService
 {
