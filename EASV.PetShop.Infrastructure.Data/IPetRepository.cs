@@ -13,7 +13,12 @@ namespace EASV.PetShop.Infrastructure.Data
 
         public Pet CreatePet (Pet pet)
         {
-            
+
+    pet.Id = FakeDB.PetId++;
+    var pets = FakeDB.Pets.ToList();
+    pets.Add(Pet);
+    FakeDB.Pets = pets;
+    return pet;
         }
     }
 }
