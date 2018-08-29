@@ -17,4 +17,7 @@
     <None Remove="EASV.PetShop.Entities\obj\EASV.Core.Entities.csproj.nuget.cache" />
     <None Remove="EASV.PetShop.Entities\obj\Debug\netstandard2.0\EASV.Core.Entities.assets.cache" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EASV.Core.Entity\EASV.Core.Entity.csproj" />
+  </ItemGroup>
 </Project>
