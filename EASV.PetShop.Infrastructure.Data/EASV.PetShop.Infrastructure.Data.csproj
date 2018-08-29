@@ -7,4 +7,7 @@
   <ItemGroup>
     <Compile Remove="Class1.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EASV.PetShop.Core\EASV.PetShop.Entities\EASV.PetShop.Entities.csproj" />
+  </ItemGroup>
 </Project>

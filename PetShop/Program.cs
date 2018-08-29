@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using EASV.PetShop.Entities;
 
 namespace PetShop
@@ -15,12 +16,12 @@ namespace PetShop
             var pet1 = new Pet()
             {
                 Id = id++,
-                Name = "Pippi",
-                Type = "Dansk-Svensk gårdhund / Terrier",
-                //BirthDate =03 / 05 / 2003 22:00:00 ,
-                //SoldDate = 01 / 11 / 2004 17:00:00 ,
+                Name = "Allan",
+                Type = "Terrier",
+                //BirthDate = new DateTime (2012, 00, 00),
+                //SoldDate = new DateTime (2015, 01, 06),
                 Color = "Brown",
-                PreviousOwner = "Abdi",
+                PreviousOwner = "Lars",
                 Price = 3500,
 
             };
@@ -78,6 +79,28 @@ namespace PetShop
             Console.ReadLine();
         }
 
+        private static Pet FindPetById()
+        {
+            Console.WriteLine("Insert pet ID:");
+
+            int id;
+
+            while (!int.TryParse(Console.ReadLine(), out id))
+            {
+                Console.WriteLine("Insert a number:");
+            }
+
+            foreach (var pet in Pets)
+            {
+                if (pet.Id == id)
+                {
+                    return pet;
+                }
+            }
+            return null;
+        }
+
+
         private static void GetFiveCheapestPetsAvalible()
         {
             throw new NotImplementedException();
@@ -90,22 +113,98 @@ namespace PetShop
 
         private static void UpdatePet()
         {
-            throw new NotImplementedException();
+            var pet = FindPetById();
+
+            Console.WriteLine("Name:");
+            pet.Name = Console.ReadLine();
+
+            Console.WriteLine("Type:");
+            pet.Type = Console.ReadLine();
+
+            //Console.WriteLine("BirthDate:");
+            //pet.BirthDate = Console.ReadLine();
+            
+            //Console.WriteLine("SoldDate:");
+            //pet.SoldDate = Console.ReadLine();
+
+            Console.WriteLine("Color:");
+            pet.Color = Console.ReadLine();
+
+            Console.WriteLine("PreviousOwner:");
+            pet.PreviousOwner = Console.ReadLine();
+
+            //Console.WriteLine("Price:");
+            //pet.Price = Console.ReadLine();
+
         }
 
         private static void DeletePet()
         {
-            throw new NotImplementedException();
+            var petFound = FindPetById();
+            if (petFound != null)
+            {
+                Pets.Remove(petFound);
+            }
         }
 
         private static void CreateNewPet()
         {
-            throw new NotImplementedException();
-        }
 
-        private static void FindPetByType()
+            Console.WriteLine("Name:");
+            var name = Console.ReadLine();
+
+            Console.WriteLine("Type:");
+            var type = Console.ReadLine();
+
+            Console.WriteLine("BirthDate:");
+            var birthDate = Console.ReadLine();
+
+            Console.WriteLine("SoldDate:");
+            var soldDate = Console.ReadLine();
+
+            Console.WriteLine("Color:");
+            var color = Console.ReadLine();
+
+            Console.WriteLine("PreviousOwner:");
+            var previousOwner = Console.ReadLine();
+
+            Console.WriteLine("Price:");
+            var price = Console.ReadLine();
+
+                   Pets.Add(new Pet()
+                   {
+                Id = id++,
+                Name = name,
+                Type = type,
+                //BirthDate = birthDate,
+                //SoldDate = soldDate,
+                Color = color,
+                PreviousOwner = previousOwner,
+                //Price = price
+
+                   });
+        }
+//        ID: int
+//Name: string
+//Type: string or Enum
+//Birthdate: DateTime
+//SoldDate: DateTime
+//Color: string
+//PreviousOwner: string
+//Price: double
+
+
+        public static void FindPetByType()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Insert pet type:");
+
+            string myString = Console.ReadLine();
+
+           
+            Pets.Where(x => x.Type.Contains(myString)).ToList();
+            var list = Pets.Where(x => x.Type.Contains(myString)).ToList();
+
+            Console.WriteLine(list);
         }
 
         private static void ShowListOfAllPets()
@@ -130,7 +229,7 @@ namespace PetShop
 
         private static void ShowListOfChoises()
         {
-            throw new NotImplementedException();
+          
         }
 
         private static int ShowMenu(string[] menuItems)
